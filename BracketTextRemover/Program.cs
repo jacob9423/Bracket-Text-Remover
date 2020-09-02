@@ -10,7 +10,8 @@ namespace BracketTextRemover
     {
         static void Main(string[] args)
         {
-            if(args.Length == 0){
+            if(args.Length == 0)
+            {
                 ConRed();
                 Console.WriteLine("please enter a path. Or PWD for the current directory you are in");
             }
