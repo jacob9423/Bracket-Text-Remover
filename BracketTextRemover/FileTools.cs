@@ -36,20 +36,22 @@ namespace BracketTextRemover
         //Arguments: 
         //           List: OldNames - a list of file paths
         //           int:  OldNameCount - the number of files in that list
+        //        String:  path - FilePath
         //Returns: 
         //           List: the list of new file names 
 
-       public List<string> GenerateNewNames(List<string> OldNames, int OldNameCount)
+       public List<string> GenerateNewNames(List<string> OldNames, int OldNameCount,string path)
         {
             List<string> NewNames = new List<string>();
 
             for (int i = 0; i < OldNameCount; i++)
             {
                 string NewName = null;
-                NewName = Regex.Replace(OldNames[i], @"[\(\[].*?[\)\]]"," ");
+                string OldName = Path.GetFileName(OldNames[i]); 
+                NewName = Regex.Replace(OldName, @"[\(\[].*?[\)\]]"," ");
                 NewName = Regex.Replace(NewName,@"[ ]{2,}"," ");
-                NewName = Regex.Replace(NewName,@"\/(\s)","/");
-                NewNames.Add("/" + NewName);
+                NewName = Regex.Replace(NewName,@"^ +","");
+                NewNames.Add(path + "/" + NewName);
             }
 
             return NewNames;

@@ -53,7 +53,7 @@ namespace BracketTextRemover
 
                 if(userChoice.ToUpper() == "Y")
                 {
-                    app.FileData.NewFileNames = app.GenerateNewNames(app.FileData.OldFileNames,app.FileData.OldFileNames.Count());
+                    app.FileData.NewFileNames = app.GenerateNewNames(app.FileData.OldFileNames,app.FileData.OldFileNames.Count(),app.FileData.Path);
                     app.RenameFiles();
 
                     ConGreen();
