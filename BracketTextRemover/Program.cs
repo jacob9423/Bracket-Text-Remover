@@ -25,7 +25,7 @@ namespace BracketTextRemover
             }
             else
             {
-                manual();
+                Manual();
             }
         }
         //<summary> Starts the program. must provid path)
@@ -33,7 +33,7 @@ namespace BracketTextRemover
         {
             bool userChoiceBool = false;
             string userChoice;
-            string ConString = "-----------------------------------------";
+            string conString = "-----------------------------------------";
             FileTools app = new FileTools();
             app.FileData.Path = path;
 
@@ -42,11 +42,11 @@ namespace BracketTextRemover
             {
                 ConGreen();
                 Console.WriteLine("Currrent Files");
-                Console.WriteLine(ConString);
+                Console.WriteLine(conString);
                 ConResetColor();
 
                 DisplayList(app.FileData.OldFileNames);
-                Console.WriteLine(ConString);
+                Console.WriteLine(conString);
 
                 Console.Write("Are you sure you want to rename? Y/N: ");
                 userChoice = Console.ReadLine();
@@ -58,7 +58,7 @@ namespace BracketTextRemover
 
                     ConGreen();
                     Console.WriteLine("Files renamed:");
-                    Console.WriteLine(ConString);
+                    Console.WriteLine(conString);
                     ConResetColor();
 
                     DisplayList(app.FileData.NewFileNames);
@@ -81,9 +81,9 @@ namespace BracketTextRemover
 
             
         //<summary> List To dispaly. String ver </summary>
-        private static void DisplayList(List<string> ListToDisplay)
+        private static void DisplayList(List<string> listToDisplay)
         {
-            foreach(var i in ListToDisplay)
+            foreach(var i in listToDisplay)
             {
                 Console.WriteLine(i);
             }
@@ -100,7 +100,7 @@ namespace BracketTextRemover
         {
             Console.ResetColor();
         }
-        private static void manual()
+        private static void Manual()
         {
             ConGreen();
             Console.WriteLine("Bracket Text Remover Manual");

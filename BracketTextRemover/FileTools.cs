@@ -23,15 +23,6 @@ namespace BracketTextRemover
             FileData.OldFileNames = Directory.GetFiles(FileData.Path).ToList();
         }
 
-        //<summary> gets the file ext form the first postion of a list of file paths </summary>
-        // Arguments: 
-        //            FileNames - A list of file names
-        // Returns:   None
-        public string GetExt(List<string> FileNames)
-        {
-            return Path.GetExtension(FileNames[0]);
-        }
-
         //<summary> generates names for the files based on the number of files </summary>
         //Arguments: 
         //           List: OldNames - a list of file paths
@@ -40,21 +31,21 @@ namespace BracketTextRemover
         //Returns: 
         //           List: the list of new file names 
 
-       public List<string> GenerateNewNames(List<string> OldNames, int OldNameCount,string path)
+       public List<string> GenerateNewNames(List<string> oldNames, int oldNameCount,string path)
         {
-            List<string> NewNames = new List<string>();
+            List<string> newNames = new List<string>();
 
-            for (int i = 0; i < OldNameCount; i++)
+            for (int i = 0; i < oldNameCount; i++)
             {
-                string NewName = null;
-                string OldName = Path.GetFileName(OldNames[i]); 
-                NewName = Regex.Replace(OldName, @"[\(\[].*?[\)\]]"," ");
-                NewName = Regex.Replace(NewName,@"[ ]{2,}"," ");
-                NewName = Regex.Replace(NewName,@"^ +","");
-                NewNames.Add(path + "/" + NewName);
+                string newName = null;
+                string oldName = Path.GetFileName(oldNames[i]); 
+                newName = Regex.Replace(oldName, @"[\(\[].*?[\)\]]"," ");
+                newName = Regex.Replace(newName,@"[ ]{2,}"," ");
+                newName = Regex.Replace(newName,@"^ +","");
+                newNames.Add(path + "/" + newName);
             }
 
-            return NewNames;
+            return newNames;
         } 
 
       
