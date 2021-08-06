@@ -4,10 +4,11 @@
     <title>BracketTextRemover</title>
     <RepositoryUrl>https://github.com/jacob9423/Bracket-Text-Remover</RepositoryUrl>
     <PackageId>BracketTextRemover</PackageId>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Authors>Jacob_Barfield</Authors>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFrameworks>netcoreapp5</TargetFrameworks>
+
     
     <PackAsTool>true</PackAsTool>
     <ToolCommandName>BracketTextRemover</ToolCommandName>
